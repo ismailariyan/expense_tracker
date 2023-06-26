@@ -2,6 +2,7 @@ import 'expenses_list/expenses_list.dart';
 import 'new_expense.dart';
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
+import 'chart/chart.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -36,6 +37,11 @@ class _ExpensesState extends State<Expenses> {
     });
   }
 
+/// This function removes an expense from a list and displays a snackbar with an undo option.
+/// 
+/// Args:
+///   expense (Expense): an object of the Expense class that needs to be removed from the list of
+/// registered expenses.
   void _removeExpense(Expense expense) {
     final expenseIndex = _registeredExpenses.indexOf(expense);
     setState(() {
@@ -58,6 +64,19 @@ class _ExpensesState extends State<Expenses> {
     );
   }
 
+ /// This function builds the main content of an expense tracker app, including an expenses list and a
+ /// chart, and allows users to add new expenses.
+ /// 
+ /// Args:
+ ///   context (BuildContext): The BuildContext is a handle to the location of a widget in the widget
+ /// tree. It is used by the framework to locate and update the widget. It is passed as a parameter to
+ /// the build() method of a widget.
+ /// 
+ /// Returns:
+ ///   A `Scaffold` widget with an `AppBar` and a `Column` as its body. The `AppBar` contains an
+ /// `IconButton` to open an overlay for adding expenses and a `Text` widget as its title. The `Column`
+ /// contains a `Chart` widget and an `Expanded` widget with either a `Center` widget displaying a
+ /// message or an `ExpensesList` widget
   @override
   Widget build(BuildContext context) {
     Widget mainContent = const Center(
@@ -76,7 +95,7 @@ class _ExpensesState extends State<Expenses> {
         title: const Text('Expense Tracker'),
       ),
       body: Column(
-        children: [const Text('Chart '), Expanded(child: mainContent)],
+        children: [Chart(expenses: _registeredExpenses), Expanded(child: mainContent)],
       ),
     );
   }
