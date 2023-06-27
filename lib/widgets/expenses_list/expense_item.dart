@@ -15,7 +15,10 @@ class ExpenseItem extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title,style:Theme.of(context).textTheme.titleLarge ,), // this is accessing the theme we setup in the main.dart file
+            Text(
+              expense.title,
+              style: Theme.of(context).textTheme.titleLarge,
+            ), // this is accessing the theme we setup in the main.dart file
             const SizedBox(height: 4),
             Row(
               children: [
@@ -23,9 +26,9 @@ class ExpenseItem extends StatelessWidget {
                 const Spacer(), // this get all the available space it can get after the amount and Data take the space
                 Row(
                   children: [
-                     Icon(categoryIcons[expense.category])
-                  , const SizedBox(width:8),
-                  Text(expense.formattedDate)
+                    Icon(categoryIcons[expense.category]),
+                    const SizedBox(width: 8),
+                    Text(expense.formattedDate)
                   ],
                 ),
               ],
