@@ -1,8 +1,8 @@
 # Expense Tracker App
 
-![Expense Tracker Banner](images\expensetracer_banner.jpg)
+![Expense Tracker Banner](images/expensetracer_banner.jpg)
 
-Expense Tracker is a Flutter app designed to help you track your expenses efficiently. It allows you to enter the title of the spend item, the amount spent, and the general category it belongs to. The app then displays your expenses in a list view and provides a bar chart to visualize your spending by category.
+Expense Tracker is a Flutter app designed to help you track your expenses efficiently. It allows you to enter the title of the spending item, the amount spent, and the general category it belongs to. The app then displays your expenses in a list view and provides a bar chart to visualize your spending by category.
 
 ## Features
 
