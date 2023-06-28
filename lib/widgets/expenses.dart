@@ -16,7 +16,7 @@ class _ExpensesState extends State<Expenses> {
     Expense(
         title: 'Flutter Course',
         amount: 19.99,
-        date: DateTime.now(),
+        date: DateTime.now(), // to get the time we use the intls package
         category: Category.work),
     Expense(
         title: 'Movie nanme jame meme',
@@ -24,10 +24,12 @@ class _ExpensesState extends State<Expenses> {
         date: DateTime.now(),
         category: Category.leisure),
   ];
+
+  // this is modal sheet where we input the values
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
-      useSafeArea: true,
-        isScrollControlled: true,
+      useSafeArea: true, // this makes sure we are in the safeare of all the devices
+        isScrollControlled: true, // this helps to prevent overlap with the keyborad
         context: context,
         builder: (ctx) => NewExpense(onAddExpense: _addExpense));
   }
@@ -48,7 +50,7 @@ class _ExpensesState extends State<Expenses> {
     setState(() {
       _registeredExpenses.remove(expense);
     });
-    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).clearSnackBars(); // clearing any previous snackbar
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: const Duration(seconds: 3),
@@ -80,7 +82,7 @@ class _ExpensesState extends State<Expenses> {
   /// message or an `ExpensesList` widget
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;// MediaQuery give us access the device parameters
     print(MediaQuery.of(context).size.height);
     Widget mainContent = const Center(
       child: Text('No expense found. Start adding some!'),
@@ -97,8 +99,8 @@ class _ExpensesState extends State<Expenses> {
         ],
         title: const Text('Expense Tracker'),
       ),
-      body: width < 600
-          ? Column(
+      body: width < 600 // for making the app responsive
+          ? Column( // redering widget conditionally
               children: [
                 Chart(expenses: _registeredExpenses),
                 Expanded(child: mainContent)
