@@ -17,12 +17,12 @@ class ExpensesList extends StatelessWidget {
         background: Container(
           color: Theme.of(context).colorScheme.error.withOpacity(0.75),
           margin: EdgeInsets.symmetric(
-              horizontal: Theme.of(context).cardTheme.margin!.horizontal),
+              horizontal: Theme.of(context).cardTheme.margin!.horizontal),// by inserting '!' we say to flutter this value wont be null
         ),
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },
-        key: ValueKey(expenses[index]),
+        key: ValueKey(expenses[index]),// passing key to  keep track of which expense has been deleted so we want to UNDO detele we know the position of the card
         child: ExpenseItem(expenses[index]),
       ),
     );

@@ -7,7 +7,7 @@ class Chart extends StatelessWidget {
   const Chart({super.key, required this.expenses});
 
   final List<Expense> expenses;
-
+// this returns list that contain the sum totals of the categories
   List<ExpenseBucket> get buckets {
     return [
       ExpenseBucket.forCategory(expenses, Category.food),
@@ -17,6 +17,7 @@ class Chart extends StatelessWidget {
     ];
   }
 
+// Max Total expense is needed to adjust the bar's relative to each other
   double get maxTotalExpense {
     double maxTotalExpense = 0;
 
@@ -55,6 +56,7 @@ class Chart extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
+            //this row renders the bars
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -68,6 +70,7 @@ class Chart extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
+          //this row handles the icons under the bars
           Row(
             children: buckets
                 .map(

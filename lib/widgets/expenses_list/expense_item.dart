@@ -13,7 +13,7 @@ class ExpenseItem extends StatelessWidget {
           vertical: 16,
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start, //this moves the cards to the left
           children: [
             Text(
               expense.title,
