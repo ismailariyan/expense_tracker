@@ -14,22 +14,22 @@ Expense Tracker is a Flutter app designed to help you track your expenses effici
 ## Installation
 
 1. Clone the repository:
-```
-https://github.com/ismailariyan/expense_tracker
+```bash
+ git clone https://github.com/ismailariyan/expense_tracker
 ```
 2. Change to the project directory:
-```
+```bash
 cd expense_tracker
 ```
 3. Install dependencies:
-```
+```bash
 flutter pub get
 ```
 
 ## Usage
 
 1. Run the app:
-```
+```bash
 flutter run
 ````
 
